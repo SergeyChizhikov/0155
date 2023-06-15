@@ -11,6 +11,17 @@
 		/>
 
 		<title>Личный кабинет</title>
+		<style>
+			.profile-header {
+				font-weight: 700;
+				color: red;
+			}
+			.profile-id,
+			.profile-mail {
+				font-size: 1.2rem;
+				font-style: italic;
+			}
+		</style>
 	</head>
 	<body>
 		<div class="container mt-5">
@@ -62,7 +73,26 @@
 							role="tabpanel"
 							aria-labelledby="v-pills-profile-tab"
 						>
-							Контент страницы профиля
+							<div class="row">
+								<div class="col-md-4">
+									<img
+										src="https://cdn2.iconfinder.com/data/icons/cartoon-avatars/128/Avatars_hipster-256.png"
+										alt="avatar"
+										width="100%"
+									/>
+								</div>
+								<div class="col-md-8">
+									<h2 class="profile-header">Фамилия и имя: <span>Иванов Иван</span></h2>
+									<p class="profile-id">ID: <span>2</span></p>
+									<p class="profile-mail">E-mail: <span>ivan@ya.ru</span></p>
+									<p>
+										Что-то о себе.... Lorem ipsum dolor sit amet consectetur adipisicing elit.
+										Dolorum tempore doloribus beatae accusamus fugiat recusandae molestiae, quod at
+										alias adipisci, voluptate reprehenderit id natus neque velit ipsa ratione saepe
+										deleniti.
+									</p>
+								</div>
+							</div>
 						</div>
 						<div
 							class="tab-pane fade"
@@ -70,7 +100,74 @@
 							role="tabpanel"
 							aria-labelledby="v-pills-messages-tab"
 						>
-							Контент страницы сообщений
+							<div class="row">
+								<div class="col-md-6">
+									<div class="row border mt-1">
+										<div class="col-3"><img src="/img/r5.jpg" alt="" /></div>
+										<div class="col-9">
+											<p class="font-weight-bold">Маргарита Семенова</p>
+											<p>Да, конечно, обсудим завтра.</p>
+										</div>
+									</div>
+									<div class="row border mt-1">
+										<div class="col-3"><img src="/img/r9.jpg" alt="" /></div>
+										<div class="col-9">
+											<p class="font-weight-bold">Ашот Варданян</p>
+											<p>Дарагой, я кончено дико извиняюсь. Не успею.</p>
+										</div>
+									</div>
+									<div class="row border mt-1">
+										<div class="col-3"><img src="/img/r7.jpg" alt="" /></div>
+										<div class="col-9">
+											<p class="font-weight-bold">Петр Петров</p>
+											<p>На рыбалку едем? Удочки брать?</p>
+										</div>
+									</div>
+									<div class="row border mt-1">
+										<div class="col-3"><img src="/img/r8.jpg" alt="" /></div>
+										<div class="col-9">
+											<p class="font-weight-bold">Ирина Иванова</p>
+											<p>В ресторан идем? Все в силе?</p>
+										</div>
+									</div>
+								</div>
+								<div class="col-md-6">
+									<div class="row ml-0 border-left border-bottom">
+										<div class="row mt-1">
+											<div class="col-3"><img src="/img/r7.jpg" alt="" /></div>
+											<div class="col-9">
+												<p class="font-weight-bold">Петр Петров</p>
+												<p>На рыбалку едем? Удочки брать?</p>
+											</div>
+										</div>
+										<div class="row mt-1">
+											<div class="col-3">
+												<img
+													src="https://cdn2.iconfinder.com/data/icons/cartoon-avatars/128/Avatars_hipster-256.png"
+													alt=""
+													width="100%"
+												/>
+											</div>
+											<div class="col-9">
+												<p class="font-weight-bold">Я</p>
+												<p>Я в ресторан с женой собрался. Эхх...</p>
+											</div>
+										</div>
+									</div>
+									<div class="row mt-4">
+										<div class="col-12">
+											<textarea
+												rows="5"
+												class="form-control"
+												placeholder="Текст сообщения"
+											></textarea>
+										</div>
+										<div class="col-6 offset-6 mt-4">
+											<button class="btn btn-success btn-block">Отправить</button>
+										</div>
+									</div>
+								</div>
+							</div>
 						</div>
 						<div
 							class="tab-pane fade"
@@ -78,7 +175,10 @@
 							role="tabpanel"
 							aria-labelledby="v-pills-settings-tab"
 						>
-							Контент страницы настроек
+							<div class="row">
+								<div class="col-md-6 p-5"><button class="btn btn-outline-danger btn-block">Изменить фамилию</button></div>
+								<div class="col-md-6 p-5"><button class="btn btn-outline-danger btn-block">Изменить имя</button></div>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -116,9 +216,9 @@
 				$("#v-pills-messages").tab("show");
 			} else if (pathname == "settings") {
 				$("#v-pills-settings").tab("show");
-			} else {
-        location.href = location.protocol + "//" + location.host;
-      }
+			// } else {
+			// 	location.href = location.protocol + "//" + location.host;
+			// }
 
 			document.getElementById(pathname + "Tab").classList.add("active");
 
